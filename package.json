@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "WDD330 final project",
   "scripts": {
-    "start": "parcel index.html"
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
   },
   "author": "James Charlie Salva <jamescharliesalva@hotmail.com>",
   "dependencies": {
