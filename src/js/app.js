@@ -4,11 +4,11 @@ import { initRouter } from './router';
 function Header(mainDiv) {
 
     const siteIcon = createElement('img', {
-        src: '../images/pets.webp', alt: 'Dog and Cat Icon'
+        src: 'https://raw.githubusercontent.com/fireburn553/dog-cat-and-weather/main/src/images/pets.webp', alt: 'Dog and Cat Icon'
     });
 
     const appTitle = createElement('h1', {
-        textContent: 'Dog, Cat, and Weather',
+        textContent: 'DOG•CAT•WEATHER',
         className: 'heading',
     });
 
