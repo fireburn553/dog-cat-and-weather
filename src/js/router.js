@@ -1,40 +1,41 @@
 import { createElement } from './utils';
+import home from './home';
 
-export function initRouter(mainView) {
+export async function initRouter(mainView) {
     function updateView(newView) {
         mainView.innerHTML = '';
         mainView.appendChild(newView);
     }
 
-  function hashToRoute(hash) {
-    switch (hash) {
-        case '#/home':
-            updateView(createElement('h3', { textContent: 'HOME' }));
-            break;
+    function hashToRoute(hash) {
+        switch (hash) {
+            case '#/home':
+                home().then(updateView).catch(error => console.error('Error updating view:', error));
+                break;
 
-        case '#/dog':
-            updateView(createElement('h3', { textContent: 'DOG' }));
-            break;
+            case '#/dog':
+                updateView(createElement('h3', { textContent: 'DOG' }));
+                break;
 
-        case '#/cat':
-            updateView(createElement('h3', { textContent: 'CAT' }));
-            break;
+            case '#/cat':
+                updateView(createElement('h3', { textContent: 'CAT' }));
+                break;
 
-        case '#/weather':
-            updateView(createElement('h3', { textContent: 'WEATHER' }));
-            break;
+            case '#/weather':
+                updateView(createElement('h3', { textContent: 'WEATHER' }));
+                break;
 
-        case '#/join':
-            updateView(createElement('h3', { textContent: 'JOIN' }));
-            break;
-        
-        default:
-            updateView(createElement('h3', { textContent: '404 Page Not Found' }));
-            break;
+            case '#/join':
+                updateView(createElement('h3', { textContent: 'JOIN' }));
+                break;
+
+            default:
+                updateView(createElement('h3', { textContent: '404 Page Not Found' }));
+                break;
+        }
     }
-  }
 
-    const defaultHash = window.location.hash || '#/page1';
+    const defaultHash = window.location.hash || '#/home';
     hashToRoute(defaultHash);
 
     window.addEventListener('hashchange', (evt) => {

@@ -11,7 +11,7 @@ body {
     background-color: var(--primary-color);
   }
 
-header {
+header, footer {
     display: block;
     text-align: center;
     width: 100%;
@@ -27,7 +27,7 @@ header > h1 {
 
 }
 
-header > nav {
+header > nav, footer {
     display: flex;
     justify-content: space-around;
     background-color: var(--tertiary-color);
@@ -47,4 +47,28 @@ header > nav > a:hover{
     border: 1px solid white;
     border-radius: 10px;
 
+}
+
+main > div{
+    text-align: center;
+}
+
+.hero-image, .cat-random-image, .dog-random-image{
+    width: 90%;
+    margin-top: 4px;
+}
+
+.cat-random-image, .dog-random-image{
+    border-radius: 50px;
+}
+
+.element-container{
+    width: 80%;
+    margin: 10px auto;
+    background-color: var(--secondary-color);
+    border-radius: 50px;
+}
+
+.element-container p{
+    padding-bottom: 5px;
 }

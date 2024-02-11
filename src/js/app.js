@@ -36,8 +36,7 @@ function Header(mainDiv) {
         textContent: 'JOIN',
     });
 
-    const nav = createElement('nav', {}, [home, dog, cat, weather, join]);
-
+    const nav = createElement('nav', {id: "navId"}, [home, dog, cat, weather, join]);
     return createElement('header', {}, [ siteIcon, appTitle, nav]);
 }
 
