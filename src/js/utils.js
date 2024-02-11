@@ -53,3 +53,12 @@ export async function getLocation() {
         }
     });
 }
+
+export function formatTime(timestamp) {
+    const date = new Date(timestamp * 1000); // Convert seconds to milliseconds
+    return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+}
+
+export function capitalize(word) {
+    return `${word.charAt(0).toUpperCase()}${word.slice(1)}`;
+}
