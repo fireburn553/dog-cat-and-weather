@@ -1,5 +1,6 @@
 import { createElement } from './utils';
 import home from './home';
+import dog from './dog';
 
 export async function initRouter(mainView) {
     function updateView(newView) {
@@ -14,7 +15,7 @@ export async function initRouter(mainView) {
                 break;
 
             case '#/dog':
-                updateView(createElement('h3', { textContent: 'DOG' }));
+                dog().then(updateView).catch(error => console.error('Error updating view:', error));
                 break;
 
             case '#/cat':

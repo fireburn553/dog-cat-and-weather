@@ -72,3 +72,18 @@ main > div{
 .element-container p{
     padding-bottom: 5px;
 }
+
+.links{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.links >a {
+    text-decoration: none;
+    padding: 10px;
+    border: 1px solid black;
+    margin-top: 10px;
+    color: black;
+    background-color: var(--secondary-color);
+}
