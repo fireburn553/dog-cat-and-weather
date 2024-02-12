@@ -1,7 +1,6 @@
-// dogRouter.js
-import { createElement } from './utils';
+import dogDetails from './dogBreedDetails';
 
-export function initDogRouter(dogView) {
+export async function initDogRouter(dogView) {
     function updateDogView(newView) {
         dogView.innerHTML = '';
         dogView.appendChild(newView);
@@ -12,7 +11,7 @@ export function initDogRouter(dogView) {
         if (dogDetailsMatch) {
             const breedId = dogDetailsMatch[1];
             // Handle the dog details view (replace this with your actual implementation)
-            updateDogView(createElement('h3', { textContent: `Dog Details for Breed ID: ${breedId}` }));
+            dogDetails(breedId).then(updateDogView).catch(error => console.error('Error updating view:', error));
         } else {
             console.log('else')
         }
