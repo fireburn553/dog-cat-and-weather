@@ -87,3 +87,11 @@ main > div{
     color: black;
     background-color: var(--secondary-color);
 }
+
+img.breed-img{
+    width: 100%;
+}
+
+div.breed-details > p{
+    text-align: justify;
+}
