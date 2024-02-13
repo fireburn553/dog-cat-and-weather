@@ -1,5 +1,7 @@
 import { createElement } from './utils';
 import { initRouter } from './router';
+import { initDogRouter } from './dogRouter';
+import { initCatRouter } from './catRouter';
 
 function Header(mainDiv) {
 
@@ -52,6 +54,9 @@ function App() {
     const main = createElement('main', {}, []);
 
     initRouter(main);
+    initDogRouter(main);
+    initCatRouter(main);
+
 
     return createElement('div', {}, [Header(main), main, Footer()]);
 }
