@@ -2,7 +2,7 @@ import { createElement } from './utils';
 import home from './home';
 import dog from './dog';
 import cat from './cat'
-
+import weather from './weather'
 export async function initRouter(mainView) {
     function updateView(newView) {
         mainView.innerHTML = '';
@@ -24,7 +24,7 @@ export async function initRouter(mainView) {
                 break;
 
             case '#/weather':
-                updateView(createElement('h3', { textContent: 'WEATHER' }));
+                weather().then(updateView).catch(error => console.error('Error updating view:', error));
                 break;
 
             case '#/join':
