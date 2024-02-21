@@ -98,10 +98,24 @@ main > div{
     background-color: var(--secondary-color);
 }
 
-.breed-item>a{
+.breed-item:hover{
+    transform: scale(1.1);
+}
+
+.breed-item a{
+    display: block;
+    width: 100%;
     text-decoration: none;
-    color: black;
-    padding: 10px 10px 40px 10px;
+    color: #333; /* Optional: Set text color */
+    text-align: center;
+    margin: auto;
+    font-weight: bold;
+}
+
+
+.breed-item>a:hover{
+    transform: scale(1.1);
+    background-color: var(--tertiary-color);
 }
 
 .like-button {
