@@ -1,5 +1,4 @@
-import App from "./js/app"
-require('dotenv').config();
+import App from "./js/app";
+require("dotenv").config();
 
-document.getElementById('root').appendChild(App());
-
+document.getElementById("root").appendChild(App());
