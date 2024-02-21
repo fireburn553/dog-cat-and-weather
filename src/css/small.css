@@ -101,6 +101,7 @@ main > div{
 .breed-item>a{
     text-decoration: none;
     color: black;
+    padding: 10px 10px 40px 10px;
 }
 
 .like-button {
