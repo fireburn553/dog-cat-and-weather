@@ -1,20 +1,32 @@
 // Import required functions from utils.js
-import { createElement, fetchData } from './utils';
+import { createElement, fetchData, toggleLike } from './utils';
 
 async function dog() {
     let breedLinks = [];
     let linksBreed = ""
     let dog = ""
 
-    const dogTitle = createElement('h3', {textContent: 'DOG BREED'})
+    const dogTitle = createElement('h2', {textContent: 'DOG BREED'})
 
     try {
         const breeds = await fetchData(`https://api.thedogapi.com/v1/breeds`);
         breeds.forEach((breed) => {
-            const breedLink = createElement('a', {
-                href: `#/dog/details/${breed.id}`,
-                textContent: breed.name
-            }, []);
+            
+            const breedId = `dog-${breed.id}`;
+
+            const isLiked = localStorage.getItem(breedId) === 'true';
+
+            const breedLink = createElement('div', { className: 'breed-item' }, [
+                createElement('a', {
+                    href: `#/dog/details/${breed.id}`,
+                    textContent: breed.name
+            }, []),
+            createElement('button', {
+                className: 'like-button',
+                textContent: isLiked ? 'Unlike ⭐️' : 'Like 🌟',
+                onclick: () => toggleLike(breedId),
+            }, []),
+        ]);
 
             breedLinks.push(breedLink);
         });

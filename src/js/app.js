@@ -6,11 +6,11 @@ import { initCatRouter } from './catRouter';
 function Header(mainDiv) {
 
     const siteIcon = createElement('img', {
-        src: 'https://raw.githubusercontent.com/fireburn553/dog-cat-and-weather/main/src/images/pets.webp', alt: 'Dog and Cat Icon'
+        src: 'https://raw.githubusercontent.com/fireburn553/dog-cat-and-weather/main/src/images/dogAndCat.webp', alt: 'Dog and Cat Icon'
     });
 
     const appTitle = createElement('h1', {
-        textContent: 'DOG•CAT•WEATHER',
+        textContent: '🐾DOG•CAT•WEATHER🐾',
         className: 'heading',
     });
 
