@@ -209,7 +209,7 @@ button:hover{
 }
 
 
-@media only screen and (min-width: 426px){
+@media only screen and (min-width: 505px){
     main,header, footer{
         max-width: 50%;
         margin: auto;
