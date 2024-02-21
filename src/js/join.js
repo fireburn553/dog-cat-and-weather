@@ -63,7 +63,6 @@ async function join() {
   });
 
   // Event listener for form submission
-  // Event listener for form submission
   joinForm.addEventListener("submit", async function (event) {
     event.preventDefault();
 

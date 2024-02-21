@@ -10,7 +10,6 @@ export async function initCatRouter(catView) {
     const catDetailsMatch = hash.match(/^#\/cat\/details\/(\w+)$/);
     if (catDetailsMatch) {
       const breedId = catDetailsMatch[1];
-      // Handle the cat details view (replace this with your actual implementation)
       catDetails(breedId)
         .then(updateCatView)
         .catch((error) => console.error("Error updating view:", error));
