@@ -130,7 +130,6 @@ export function visit(visitMessage) {
     visitMessage.textContent = `Welcome to the page! We hope that you enjoy visiting the page.`;
   }
 
-  // Set a timeout to clear the message after 2 minutes (120,000 milliseconds)
   setTimeout(() => {
     visitMessage.textContent = "";
   }, 10000);

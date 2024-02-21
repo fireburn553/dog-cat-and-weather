@@ -10,7 +10,6 @@ export async function initDogRouter(dogView) {
     const dogDetailsMatch = hash.match(/^#\/dog\/details\/(\w+)$/);
     if (dogDetailsMatch) {
       const breedId = dogDetailsMatch[1];
-      // Handle the dog details view (replace this with your actual implementation)
       dogDetails(breedId)
         .then(updateDogView)
         .catch((error) => console.error("Error updating view:", error));
