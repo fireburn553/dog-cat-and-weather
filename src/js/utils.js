@@ -62,3 +62,47 @@ export function formatTime(timestamp) {
 export function capitalize(word) {
     return `${word.charAt(0).toUpperCase()}${word.slice(1)}`;
 }
+
+export function validateEmail(email) {
+    // Basic email validation using a regular expression
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+export function validatePassword(password) {
+    // Basic password validation: minimum 8 characters
+    return password.length >= 8;
+}
+
+export function toggleLike(breedId) {
+    const isLiked = localStorage.getItem(breedId) === 'true';
+    localStorage.setItem(breedId, !isLiked);
+    updateLikeButtons(breedId);
+}
+
+function updateLikeButtons(breedId) {
+    document.querySelectorAll('.like-button').forEach((button) => {
+        const buttonBreedId = button.parentElement.querySelector('a').getAttribute('href').split('/').pop();
+        if (breedId === `dog-${buttonBreedId}` || breedId === `cat-${buttonBreedId}`) {
+            const isLiked = localStorage.getItem(breedId) === 'true';
+            button.textContent = isLiked ? 'Unlike ⭐️' : 'Like 🌟';
+            button.classList.toggle('liked', isLiked);
+        }
+    });
+}
+
+export function toggleLikeDetails(breedId) {
+    const isLiked = localStorage.getItem(breedId) === 'true';
+    localStorage.setItem(breedId, !isLiked);
+    updateLikeButtonsDetails(breedId);
+}
+
+function updateLikeButtonsDetails(breedId) {
+    const id = breedId
+    document.querySelectorAll('.like-button').forEach((button) => {
+        const breedId = id;
+        const isLiked = localStorage.getItem(breedId) === 'true';
+        button.textContent = isLiked ? 'Unlike ⭐️' : 'Like 🌟';
+        button.classList.toggle('liked', isLiked);
+    });
+}

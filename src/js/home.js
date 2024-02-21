@@ -6,11 +6,13 @@ const weatherApiKey = process.env.WEATHER_API_KEY;
 
 async function home() {
     try {
+       
         const heroImage = createElement('img', {
             src: 'https://raw.githubusercontent.com/fireburn553/dog-cat-and-weather/main/src/images/close-up-portrait-beautiful-cat.webp', 
             alt: 'Dog and Cat Hero Image',
             className: "hero-image"
         }); 
+        const heroContainter = createElement('div', {className:"hero-container"}, [heroImage])
         const position = await getLocation();
         const weatherData = await fetchData(`https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${weatherApiKey}&units=metric`);
         const weatherElement = displayWeatherInfo(weatherData);
@@ -23,7 +25,7 @@ async function home() {
 
         const title = createElement('h2', { textContent: 'HOME' });
 
-        return createElement('div', {}, [heroImage, title, catElement, dogElement, weatherElement]);
+        return createElement('div', {}, [heroContainter, title, catElement, dogElement, weatherElement]);
     } catch (error) {
         console.error('Error in home:', error);
         throw error; 
