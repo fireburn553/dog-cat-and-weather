@@ -21,7 +21,7 @@ async function weather() {
       "div",
       { className: "current-weather" },
       [
-        createElement("h3", { textContent: "Current Weather" }),
+        createElement("h3", { textContent: "Current Weather in your location" }),
         createElement("img", {
           src: `https://openweathermap.org/img/wn/${currentWeather.weather[0].icon}.png`,
           alt: "Weather Icon",
